@@ -19,8 +19,8 @@
       -> Copy the color mode (HSL)
   */
 
-  --hue: 162;
-  --first-color: hsl(var(--hue), 100%, 40%);
+  --hue: 205;
+  --first-color: hsl(var(--hue), 100%, 70%);
   --first-color-alt: hsl(var(--hue), 56%, 35%);
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 65%);
@@ -154,33 +154,257 @@ svg {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: var(--container-color);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
 
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.nav__logo{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__logo span{
+  color: var(--first-color);
+}
+
+.nav__toggle,
+.nav__close{
+  display: flex;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 
 /* Navigation for mobile devices */
+@media screen and (max-width: 1023px){
 
+  .nav__toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .nav__menu{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 10%, .3);
+    width: 25%;
+    height: 100%;
+    padding: 4.5rem 0 0 3rem;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px); /* For safari */
+    transition: right .4s;
+  }
+
+  .nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;  
+  }
+
+  .nav__link{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: color .4s;
+
+  }
+
+  .nav__link:hover{
+    color: var(--first-color);  
+  }
+
+  .nav__close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+}
 
 /* Show menu */
+.show-menu{
+  left: 0;
+}
+
+/* Desktop Navigation Menu */
+@media screen and (min-width: 1024px) {
+  
+  .nav__menu {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+
+  .nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: color .4s;
+  }
+
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+}
+
+/* Container Width Adjustment */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Padding Adjustment */
+.section {
+  padding: 7rem 0;
+}
+
+
 
 
 /* Add blur to header */
+.blur-header{
+  background-color: transparent;
+}
+
+.blur-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0, 0%, 10%, .3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /*For safari */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 
 /* Active link */
 
 
 /*=============== HOME ===============*/
+.home{
+  background-color: var(--container-color);
+}
+
+.home__container{
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+}
+
+.home__content{
+  display: grid;
+  row-gap: 2rem;  
+}
+
+.home__data{
+  text-align: center;
+}
+
+.home__subtitle,
+.home__education{
+  font-size: var(--bigger-font-size);
+}
+
+.home__subtitle span,
+.home__title{
+  color: var(--first-color);
+}
+
+.home__title{
+  font-size: var(--bigger-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.home__description{
+  margin-block: 1rem 1.5rem;
+}
+
+.home__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+}
+
+.home__social-link{
+  display: flex;
+  background-color: var(--first-color-alt);
+  padding: .5rem;
+  color: var(--title-color);
+  font-size: 1.5rem;
+  clip-path: circle(49%);
+  transition: transform .4s;
+}
+
+.home__social-link:hover{
+  transform: translate(-.25rem);
+}
+
+.home_image{
+  justify-self: center;
+}
+
+.home__blob{
+  width: 320px;
+  fill: var(--first-color);
+  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 60%, .5));
+}
+
+/* .home__img{
+  width: 600px;
+  transform: translateX(60px);
+} */
 
 
 /*=============== BUTTON ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  padding: 0.5rem 1.75rem;
+  border-radius: .5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: box-shadow .4s;
+}
 
+.button:hover{
+  box-shadow: 0 8px 24px hsla(var(--hue), 100%, 60%, .25);
+}
 
 /*=============== ABOUT ===============*/
 
 
 /*=============== SKILLS ===============*/
-
-
-/*=============== SERVICES ===============*/
 
 
 /*=============== PROJECTS ===============*/

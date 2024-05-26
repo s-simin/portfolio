@@ -18,55 +18,190 @@
    <body>
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
-         
+         <nav class="nav container">
+            <a href="#" class="nav__logo">
+               Si Min <span>Suen</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+
+                  <li class="nav__item">
+                     <a href="#home" class="nav__link">Home</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#about" class="nav__link">About</a>
+                  </li>
+
+                  <li class="nav__item">
+                     <a href="#contact" class="nav__link">Contact</a>
+                  </li>                  
+
+               </ul>
+               <!-- Close button -->
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line"></i>
+            </div>
+         </nav>
       </header>
 
       <!--==================== MAIN ====================-->
       <main class="main">
          <!--==================== HOME ====================-->
          <section class="home section" id="home">
-            
+            <div class="home__container container grid">
+               <div class="home__conent">
+                  <div class="home__data">
+                     <h3 class="home__subtitle">
+                        Hello, <span>I'm</span>
+                     </h3>
+
+                     <h1 class="home__title">Si Min</h1>
+
+                     <h3 class="home__education">Data Analyst</h3>
+
+                     <p class="home__description">
+                        I am an aspiring Data analyst with a love to make lives happier
+                     </p>
+
+                     <a href="#contact" class="button">Let's Talk</a>
+                  </div>
+
+                  <div class="home__social">
+                     <a href="https://github.com/s-simin/Data_Projects" target="_blank" class="home__social-link">
+                        <i class="ri-github-fill"></i>
+                     </a>
+
+                     <a href="https://www.linkedin.com/in/si-min-suen" target="_blank" class="home__social-link">
+                        <i class="ri-linkedin-box-fill"></i>
+                     </a>
+
+                     <a href="mailto:suensimin@gmail.com" target="_blank" class="home__social-link">
+                        <i class="ri-mail-line"></i>
+                     </a>
+
+                  </div>
+               </div>
+
+               <div class="home__image">
+                  <svg class="home__blob" viewBox="0 0 550 591" xmlns="http://www.w3.org/2000/svg">
+                     <mask id="maskBlob" mask-type="alpha">
+                        <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+                        170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+                        447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+                        587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+                        438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z" />
+                     </mask>
+                     <g mask="url(#maskBlob)">
+                        <path d="M263 47.1782C270.426 42.891 279.574 42.891 287 47.1782L501.157 
+                        170.822C508.583 175.109 513.157 183.032 513.157 191.606V438.894C513.157 
+                        447.468 508.583 455.391 501.157 459.678L287 583.322C279.574 587.609 270.426 
+                        587.609 263 583.322L48.843 459.678C41.4174 455.391 36.843 447.468 36.843 
+                        438.894V191.606C36.843 183.032 41.4174 175.109 48.843 170.822L263 47.1782Z" />
+
+                        <rect x="37" width="476" height="630" fill="url(#pattern0)" />
+                     </g>
+
+                     <rect x="37" width="476" height="300" fill="url(#pattern1)" />
+
+                     <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use href="#imageBlob" transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)" />
+                        </pattern>
+
+                        <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use href="#imageBlob" transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)" />
+                        </pattern>
+
+                        <!-- Insert your profile (recommended size: 640 x 940) -->
+                        <image class="home__img" id="imageBlob" width="640" height="925" href="assets\img\Headshot.png" />
+                     </defs>
+                  </svg>
+               </div>
+            </div>
          </section>
 
          <!--==================== ABOUT ====================-->
          <section class="about section" id="about">
-            
-         </section>
+            <div class="about__container container">
+                <h2 class="section__title">About Me</h2>
+                <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor ac magna ut tincidunt. In hac habitasse platea dictumst.</p>
+            </div>
+        </section>
 
          <!--==================== SKILLS ====================-->
-         <section class="skills section">
-            
-         </section>
-
-         <!--==================== SERVICES ====================-->
-         <section class="services section" id="services">
-            
-         </section>
+         <section class="skills section" id="skills">
+            <div class="skills__container container">
+                <h2 class="section__title">Skills</h2>
+                <div class="skills__content">
+                    <div class="skills__data">
+                        <i class="ri-bar-chart-box-line skills__icon"></i>
+                        <div>
+                            <h3 class="skills__title">Data Analysis</h3>
+                            <span class="skills__subtitle">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <i class="ri-pie-chart-2-line skills__icon"></i>
+                        <div>
+                            <h3 class="skills__title">Visualization</h3>
+                            <span class="skills__subtitle">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
          <!--==================== PROJECTS ====================-->
          <section class="projects section" id="projects">
-            
-         </section>
+            <div class="projects__container container">
+                <h2 class="section__title">Projects</h2>
+                <div class="projects__content">
+                    <div class="projects__data">
+                        <h3 class="projects__title">Project One</h3>
+                        <p class="projects__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="projects__data">
+                        <h3 class="projects__title">Project Two</h3>
+                        <p class="projects__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
          <!--==================== CONTACT ====================-->
          <section class="contact section" id="contact">
-            
-         </section>
+            <div class="contact__container container">
+                <h2 class="section__title">Contact Me</h2>
+                <p class="contact__text">You can reach me at: <a href="mailto:suensimin@gmail.com">suensimin@gmail.com</a></p>
+            </div>
+        </section>
       </main>
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">
-         
-      </footer>
+        <div class="footer__container container">
+            <p class="footer__text">© 2024 Si Min Suen. All rights reserved.</p>
+        </div>
+    </footer>
 
       <!--========== SCROLL UP ==========-->
+      <div class="scroll-up" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+      </div>
       
-
       <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
+      <script src="assets/js/scrollreveal.min.js"></script>
 
       <!--=============== EMAIL JS ===============-->
-      email type here
+      suensimin@gmail.com
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
