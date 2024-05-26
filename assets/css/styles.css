@@ -310,7 +310,9 @@ svg {
 
 
 /* Active link */
-
+.active-link{
+  color: var(--first-color);
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -318,13 +320,18 @@ svg {
 }
 
 .home__container{
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center align items vertically */
+  justify-content: space-between; /* Add space between items */
   padding-top: 2rem;
   row-gap: 2.5rem;
 }
 
-.home__content{
-  display: grid;
-  row-gap: 2rem;  
+.home__content {
+  display: flex; /* Use flexbox layout for content if needed */
+  flex-direction: column; /* Stack content items vertically */
+  row-gap: 2rem;
+  flex: 1; /* Allow content to take up available space */
 }
 
 .home__data{
@@ -370,14 +377,16 @@ svg {
   transform: translate(-.25rem);
 }
 
-.home_image{
+.home_image {
   justify-self: center;
+  flex: 1; /* Allow image to take up available space */
+  max-width: 100%; /* Ensure image does not overflow */
 }
 
-.home__blob{
+.home__blob {
   width: 320px;
   fill: var(--first-color);
-  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 60%, .5));
+  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 50%, .05));
 }
 
 /* .home__img{
@@ -408,28 +417,285 @@ svg {
 
 
 /*=============== PROJECTS ===============*/
+.projects{
+  background-color: var(--container-color);
+}
+
+.projects__container {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
+  gap: 2rem; /* Add spacing between items */
+  justify-content: center; /* Center the items */
+}
+
+.projects__card {
+  flex: 1 1 calc(25% - 2rem); /* Adjust the width to fit four items per row, considering the gap */
+  max-width: calc(25% - 2rem); /* Ensure the cards don't exceed 25% of the container's width */
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.projects__img{
+  width: 100%; /* Adjust this value to make the images smaller */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the image within the card */
+  display: block; /* Ensure the image is displayed as a block element */
+  padding: 5px;
+}
+
+.projects__modal{
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+  hsla(0, 0%, 0%, 0) 0%,
+  hsla(var(--hue), 70%, 40%, .8) 120%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /*For safari */
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:bottom .4s;
+}
+
+.projects__subtitle,
+.projects__button{
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+
+.projects__subtitle{
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.projects__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .75rem;
+}
+
+.projects__button{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-medium);
+}
+
+.projects__button i{
+  font-size: 1.25rem;
+}
+
+.projects__card:hover .projects__modal{
+  bottom: 0;
+}
 
 
 /*=============== CONTACT ===============*/
+.contact__container{
+  padding-top: 1rem;
+}
+
+.contact__form,
+.contact__group{
+  display: grid;
+  row-gap: 1rem;
+}
+
+.contact__form{
+  position: relative;
+}
+
+.contact__input{
+  padding: 1rem 1.25rem;
+  border-radius: .5rem;
+  background-color: var(--container-color);
+  color: var(--title-color);
+}
+
+.contact__input::placeholder{
+  color: var(--text-color);
+}
+
+.contact__form textarea{
+  height: 11rem;
+  resize: none;
+  margin-bottom: 2rem;
+}
+
+
+.contact__button{
+  justify-self: center;
+  cursor: pointer;
+}
+
+.contact__message{
+  position: absolute;
+  left: 0;
+  bottom: 4.5rem;
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+}
 
 
 /*=============== FOOTER ===============*/
+.footer{
+  background-color: var(--container-color);
+  padding-block: 3.5rem 2rem;
+}
 
+.footer__container{
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.footer__title{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: .25rem;
+}
+
+.footer__title span{
+  color: var(--first-color);
+}
+
+.footer__education{
+  font-size: var(--normal-font-size);
+}
+
+.footer__social{
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+}
+
+.footer__social-link{
+  display: flex;
+  background-color: var(--first-color-alt);
+  padding: .5rem;
+  color: var(--title-color);
+  font-size: 1.5rem;
+  clip-path: circle(49%);
+  transition: transform .4s;
+}
+
+.footer__social-link:hover{
+  transform: translateY(-.25rem);
+}
+
+.footer__copy{
+  font-size: var(--smaller-font-size);
+  margin-top: 2rem;
+}
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: 0.9rem;
+  border-radius: 0.5rem;
+  background-color: hsl(228,12%,25%);
+}
 
+::-webkit-scrollbar-thumb{
+  background-color: hsl(228,8%,35%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(228,8%,45%);
+}
 
 /*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  padding: 6px;
+  display: inline-flex;
+  border-radius: .25rem;
+  color: var(--first-color);
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px hsla(228, 15%, 8%, .4);
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
 
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
 
 /* Show Scroll Up */
-
+.show-scroll{
+  bottom: 3rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px){
+  .container{
+    margin-inline: 1rem;
+  }
 
+  .skills__content{
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+  }
+
+  .services__card{
+    padding-block: 1.5rem;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 576px){
+  .home__container,
+  .about__container,
+  .projects__container,
+  .contact__container{
+    grid-template-columns: 360px;
+    justify-content: center;
+  }
+
+@media screen and (min-width: 768px){
+  .nav__menu{
+    width: 55%;
+  }
+
+  .home__container
+  .about__container{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .home__data,
+  .about__data,
+  .projects__data
+  :is(.about__data, .projects__data) :is(.section__subtitle, .section__title){
+    text-align: initial;
+  }
+
+  .home__social{
+    justify-content: initial;
+  }
+
+  .home__blob,
+  .about__blob{
+    width: 400px;
+  }
+
+  .about__data{
+    order: 1;
+  }
+
+  .projects__container{
+    grid-template-columns: repeat(2, 352px);    
+  }
+}
+}
 
 
 /* For large devices */
