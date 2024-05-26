@@ -657,7 +657,8 @@ svg {
     text-align: initial;
   }
 
-  .home__social{
+  .home__social,
+  .contact__social{
     justify-content: initial;
   }
 
@@ -752,13 +753,6 @@ svg {
   .contact__container{
     grid-template-columns: 680px;
     padding-block: 2.5rem 2 rem;
-  }
-  .contact__group{
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-  }
-  .contact__input{
-    padding: 1.5rem;
   }
   .contact__social{
   column-gap: 1.5rem;
