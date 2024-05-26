@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.header {
+  padding: 10px;
+  background-color: #f1f1f1;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.openbtn {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 2;
+  margin-left: 10px;
+}
+
+.projects {
+  /* Style your projects section here */
+}
