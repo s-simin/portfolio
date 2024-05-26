@@ -1,3 +1,19 @@
 title: Si Min's Portfolio
-#show_downloads: true
-theme: jekyll-theme-minimal
+
+title: My Data Gallery
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This is a gallery of my data projects.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://s-simin.github.io/" # the base hostname & protocol for your site
+github_username: s-simin
+linkedin_username: si-min-suen
+
+theme: jekyll-theme-cayman
+
+plugins:
+  - jekyll-feed
+
+# Build settings
+markdown: kramdown
+
