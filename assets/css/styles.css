@@ -496,7 +496,7 @@ svg {
 
 
 /*=============== CONTACT ===============*/
-.contact__container{
+.contact__social{
   padding-top: 1rem;
 }
 .contact__social{
@@ -633,7 +633,7 @@ svg {
   .home__container,
   .about__container,
   .projects__container,
-  .contact__container{
+  .contact__social{
     grid-template-columns: 360px;
     justify-content: center;
   }
@@ -750,7 +750,7 @@ svg {
     font-size: var(--normal-font-size);
   }
 
-  .contact__container{
+  .contact__social{
     grid-template-columns: 680px;
     padding-block: 2.5rem 2 rem;
   }
