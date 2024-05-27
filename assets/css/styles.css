@@ -299,7 +299,7 @@ svg {
   position: absolute;
   width: 1000%;
   height: 100%;
-  background-color: hsla(0, 0%, 10%, .3);
+  background-color: hsla(1, 0%, 100%, 0.2);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px); /*For safari */
   top: 0;
@@ -441,7 +441,7 @@ svg {
 .projects__container {
   display: flex; /* Use flexbox layout */
   flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
-  gap: 2rem; /* Add spacing between items */
+  gap: 5rem; /* Add spacing between items */
   justify-content: center; /* Center the items */
 }
 
@@ -451,6 +451,11 @@ svg {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+}
+
+.projects__img-container {
+   position: relative;
+   display: inline-block;
 }
 
 .projects__img{
@@ -463,8 +468,8 @@ svg {
 
 .projects__modal{
   position: absolute;
-  left: 0;
-  bottom: -100%;
+  left: 0%;
+  bottom: 0%;  
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg,
@@ -477,7 +482,8 @@ svg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition:bottom .4s;
+  transition: left .3s;
+  visibility: hidden;
 }
 
 .projects__subtitle,
@@ -486,14 +492,24 @@ svg {
   font-size: var(--small-font-size);
 }
 
-.projects__subtitle{
+.projects__title{
   display: block;
-  margin-bottom: .25rem;
+  font-size: var(--h2-font-size);
+  margin-top: 1rem;
 }
 
-.projects__title{
-  font-size: var(--h2-font-size);
-  margin-bottom: .75rem;
+.projects__subtitle{
+  display: block;
+  font-size: var(--h3-font-size);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.projects__description,
+.projects__skill{
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .projects__button{
@@ -507,8 +523,8 @@ svg {
   font-size: 1.25rem;
 }
 
-.projects__card:hover .projects__modal{
-  bottom: 0;
+.projects__img-container:hover .projects__modal {
+   visibility: visible;
 }
 
 
@@ -657,6 +673,10 @@ svg {
     margin-inline: 1rem;
   }
 
+  .about__description {
+    padding: 0rem 1rem 1rem;
+  }
+
   .skills__content{
     grid-template-columns: max-content;
     row-gap: 1rem;
@@ -673,6 +693,10 @@ svg {
     padding: 4.5rem 0 0 0rem;
     font-size: .0001rem;
   }
+
+  .about__description {
+    padding: 0rem 1rem 1rem;
+  }
 }
 
 /* For medium devices */
@@ -686,6 +710,9 @@ svg {
   }
   .nav__menu{
     width: 25%;
+  }
+  .about__description {
+    padding: 0rem 1rem 1rem;
   }
 }
 
