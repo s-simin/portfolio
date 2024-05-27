@@ -20,12 +20,12 @@
   */
 
   --hue: 205;
-  --first-color: hsl(var(--hue), 100%, 70%);
-  --first-color-alt: hsl(var(--hue), 56%, 35%);
-  --title-color: hsl(228, 8%, 95%);
-  --text-color: hsl(228, 8%, 65%);
-  --body-color: hsl(228, 15%, 20%);
-  --container-color: hsl(228, 15%, 15%);
+  --first-color: hsl(var(--hue), 100%, 50%);
+  --first-color-alt: hsl(var(--hue), 100%, 82%);
+  --title-color: hsl(228, 15%, 15%);
+  --text-color: hsl(228, 15%, 20%);
+  --body-color: hsla(210, 100%, 74%, 0.026);
+  --container-color: hsl(0, 0%, 100%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -214,7 +214,9 @@ svg {
   .nav__list{
     display: flex;
     flex-direction: column;
-    row-gap: 3rem;  
+    row-gap: 1rem;  
+    font-size: 1rem;
+    padding: 1rem; /* Ensure some padding */    
   }
 
   .nav__link{
@@ -287,9 +289,6 @@ svg {
   padding: 7rem 0;
 }
 
-
-
-
 /* Add blur to header */
 .blur-header{
   background-color: transparent;
@@ -349,7 +348,7 @@ svg {
 }
 
 .home__title{
-  font-size: var(--bigger-font-size);
+  font-size: var(--biggest-font-size);
   font-weight: var(--font-semi-bold);
 }
 
@@ -411,7 +410,25 @@ svg {
 }
 
 /*=============== ABOUT ===============*/
-
+.about__container{
+  display: flex;
+}
+.about__data{
+  row-gap: 2.5rem;
+  text-align: center;
+}
+.about__description{
+  padding: 0rem 6rem 1rem;
+}
+.about__image{
+  justify-self: center;
+}
+.about_blob{
+  width: 320px;
+}
+.about_blob path{
+  stroke: var(--first-color);
+}
 
 /*=============== SKILLS ===============*/
 
@@ -495,6 +512,28 @@ svg {
 }
 
 
+
+
+
+
+
+/* Ensure proportional font sizes for project titles and buttons */
+.projects__title {
+  font-size: 2vw; /* Adjust the value as needed */
+}
+
+.projects__button {
+  font-size: 1.5vw; /* Adjust the value as needed */
+}
+
+
+
+
+
+
+
+
+
 /*=============== CONTACT ===============*/
 .contact__social{
   padding-top: 1rem;
@@ -523,18 +562,18 @@ svg {
 /*=============== FOOTER ===============*/
 .footer{
   background-color: var(--container-color);
-  padding-block: 3.5rem 2rem;
+  padding-block: 2.5rem 2rem;
 }
 
 .footer__container{
-  row-gap: 2rem;
+  row-gap: 0.5rem;
   text-align: center;
 }
 
 .footer__title{
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .footer__title span{
@@ -567,7 +606,7 @@ svg {
 
 .footer__copy{
   font-size: var(--smaller-font-size);
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -628,6 +667,14 @@ svg {
   }
 }
 
+@media screen and (max-width: 575px){
+  .nav__menu{
+    width: 30%;
+    padding: 4.5rem 0 0 0rem;
+    font-size: .0001rem;
+  }
+}
+
 /* For medium devices */
 @media screen and (min-width: 576px){
   .home__container,
@@ -637,17 +684,21 @@ svg {
     grid-template-columns: 360px;
     justify-content: center;
   }
+  .nav__menu{
+    width: 25%;
+  }
 }
 
 @media screen and (min-width: 768px){
   .nav__menu{
-    width: 55%;
+    width: 25%;
   }
 
   .home__container
   .about__container{
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    justify-content: center;
   }
 
   .home__data,
@@ -657,8 +708,7 @@ svg {
     text-align: initial;
   }
 
-  .home__social,
-  .contact__social{
+  .home__social{
     justify-content: initial;
   }
 
@@ -668,11 +718,16 @@ svg {
   }
 
   .about__data{
+    text-align: justify;
     order: 1;
   }
 
   .projects__container{
     grid-template-columns: repeat(2, 352px);    
+  }
+
+  .contact__social{
+    justify-content: center;
   }
 }
 
@@ -753,9 +808,7 @@ svg {
   .contact__social{
     grid-template-columns: 680px;
     padding-block: 2.5rem 2 rem;
-  }
-  .contact__social{
-  column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .footer{
@@ -780,4 +833,16 @@ svg {
   .scrollup{
     right: 1rem;
   }
+}
+
+#about.section {
+  padding-block: 3rem 2rem;
+}
+
+#projects.section {
+  padding-block: 3rem 2rem;
+}
+
+#contact.section {
+  padding-block: 3rem;
 }
