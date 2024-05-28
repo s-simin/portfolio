@@ -1,5 +1,4 @@
-# Data Analyst
+# Portfolio on Webpage
 
-### Education
-Life Sciences, BSc, National University of Singapore
-Data Science Immersive, General Assembly
+### About
+This repository contains codes for the Github pages
