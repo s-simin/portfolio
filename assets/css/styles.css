@@ -439,23 +439,30 @@ svg {
 }
 
 .projects__container {
-  display: flex; /* Use flexbox layout */
-  flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
-  gap: 5rem; /* Add spacing between items */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 6rem; /* Adjusts the gap between rows */
+  column-gap: 1.5rem; /* Adjusts the gap between columns */
   justify-content: center; /* Center the items */
 }
 
 .projects__card {
-  flex: 1 1 calc(25% - 2rem); /* Adjust the width to fit four items per row, considering the gap */
-  max-width: calc(25% - 2rem); /* Ensure the cards don't exceed 25% of the container's width */
+  /* flex: 1 1 calc(25% - 2rem); /* Adjust the width to fit four items per row, considering the gap */
+  /* max-width: calc(25% - 2rem); /* Ensure the cards don't exceed 25% of the container's width */
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
-}
+  padding: 1rem; /* Inner space within the card */
+  margin: .05rem; /* Space between cards */
+  background-color: #fff; /* Optional: background color to distinguish the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual separation */
+}  
 
 .projects__img-container {
-   position: relative;
-   display: inline-block;
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Container will adjust based on parent size */
 }
 
 .projects__img{
@@ -495,7 +502,10 @@ svg {
 .projects__title{
   display: block;
   font-size: var(--h2-font-size);
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
 }
 
 .projects__subtitle{
@@ -503,6 +513,9 @@ svg {
   font-size: var(--h3-font-size);
   margin-top: 1rem;
   margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: justify;
 }
 
 .projects__description,
@@ -510,6 +523,7 @@ svg {
   display: block;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .projects__button{
@@ -672,18 +686,19 @@ svg {
   .container{
     margin-inline: 1rem;
   }
-
   .about__description {
     padding: 0rem 1rem 1rem;
   }
-
   .skills__content{
     grid-template-columns: max-content;
     row-gap: 1rem;
   }
-
   .services__card{
     padding-block: 1.5rem;
+  }
+  .projects__container{
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto;
   }
 }
 
@@ -693,9 +708,12 @@ svg {
     padding: 4.5rem 0 0 0rem;
     font-size: .0001rem;
   }
-
   .about__description {
     padding: 0rem 1rem 1rem;
+  }
+  .projects__container{
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto;
   }
 }
 
@@ -703,7 +721,6 @@ svg {
 @media screen and (min-width: 576px){
   .home__container,
   .about__container,
-  .projects__container,
   .contact__social{
     grid-template-columns: 360px;
     justify-content: center;
@@ -713,6 +730,10 @@ svg {
   }
   .about__description {
     padding: 0rem 1rem 1rem;
+  }
+  .projects__container{
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto;
   }
 }
 
@@ -750,7 +771,7 @@ svg {
   }
 
   .projects__container{
-    grid-template-columns: repeat(2, 352px);    
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .contact__social{
@@ -824,7 +845,7 @@ svg {
   }
 
   .projects__container{
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(2, 1fr); /* Maintain 2 columns */
     row-gap: 3rem;
     padding-block: 2.5rem 4rem;
   }
