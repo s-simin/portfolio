@@ -385,7 +385,8 @@ svg {
 .home__blob {
   width: 320px;
   fill: var(--first-color);
-  filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 50%, .05));
+  /* filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 50%, .5)); */
+  filter: drop-shadow(8px 0 10px rgba(0, 0, 0, 0.3)); /* Optional: shadow for visual separation */
 }
 
 /* .home__img{
@@ -438,6 +439,19 @@ svg {
   background-color: var(--container-color);
 }
 
+.video-container {
+  display: flex;
+  justify-content: center; /* Centers the video horizontally */
+  margin-bottom: 2rem; /* Adds some space below the video */
+}
+
+.video-container video {
+  max-width: 100%; /* Ensures the video is responsive */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 0.5rem; /* Rounds the corners of the video box */
+  box-shadow: 8px 0 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for visual separation */
+}
+
 .projects__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -451,12 +465,12 @@ svg {
   /* flex: 1 1 calc(25% - 2rem); /* Adjust the width to fit four items per row, considering the gap */
   /* max-width: calc(25% - 2rem); /* Ensure the cards don't exceed 25% of the container's width */
   position: relative;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   padding: 1rem; /* Inner space within the card */
   margin: .05rem; /* Space between cards */
   background-color: #fff; /* Optional: background color to distinguish the card */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual separation */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual separation */
 }  
 
 .projects__img-container {
@@ -493,8 +507,7 @@ svg {
   visibility: hidden;
 }
 
-.projects__subtitle,
-.projects__button{
+.projects__subtitle{
   color: var(--title-color);
   font-size: var(--small-font-size);
 }
@@ -530,7 +543,9 @@ svg {
   display: flex;
   align-items: center;
   column-gap: .5rem;
+  font-size: clamp(12px, 2.5vw, 28px); /* Adjust the value as needed */
   font-weight: var(--font-medium);
+  color: hsl(0, 0%, 100%);  
 }
 
 .projects__button i{
@@ -542,25 +557,10 @@ svg {
 }
 
 
-
-
-
-
-
 /* Ensure proportional font sizes for project titles and buttons */
 .projects__title {
-  font-size: 2vw; /* Adjust the value as needed */
+  font-size: 2.5vw; /* Adjust the value as needed */
 }
-
-.projects__button {
-  font-size: 1.5vw; /* Adjust the value as needed */
-}
-
-
-
-
-
-
 
 
 
@@ -715,6 +715,9 @@ svg {
     grid-template-columns: 1fr; /* Single column layout */
     grid-template-rows: auto;
   }
+  .projects__button{
+    font-size: clamp(12px, 2.5vw, 28px); /* Adjust the value as needed */
+  }
 }
 
 /* For medium devices */
@@ -734,6 +737,9 @@ svg {
   .projects__container{
     grid-template-columns: 1fr; /* Single column layout */
     grid-template-rows: auto;
+  }
+  .projects__button{
+    font-size: clamp(12px, 2.5vw, 28px); /* Adjust the value as needed */
   }
 }
 
@@ -774,6 +780,10 @@ svg {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .projects__button{
+    font-size: clamp(12px, 2.5vw, 28px); /* Adjust the value as needed */
+  }
+
   .contact__social{
     justify-content: center;
   }
@@ -806,6 +816,10 @@ svg {
   .blur-header::after{
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px); /* For Safari */
+  }
+
+  .projects__button{
+    font-size: clamp(12px, 2.5vw, 28px); /* Adjust the value as needed */
   }
 }
 
@@ -850,7 +864,7 @@ svg {
     padding-block: 2.5rem 4rem;
   }
   .projects__button{
-    font-size: var(--normal-font-size);
+    font-size: clamp(12px, 2.5vw, 28px); /* Adjust the value as needed */
   }
 
   .contact__social{
