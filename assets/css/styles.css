@@ -379,14 +379,15 @@ svg {
 .home_image {
   justify-self: center;
   flex: 1; /* Allow image to take up available space */
-  max-width: 100%; /* Ensure image does not overflow */
+  max-width: 100%; /* Ensure image does not overflow */  
 }
 
 .home__blob {
   width: 320px;
+  padding: 1.5rem;
   fill: var(--first-color);
   /* filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 50%, .5)); */
-  filter: drop-shadow(8px 0 10px rgba(0, 0, 0, 0.3)); /* Optional: shadow for visual separation */
+  filter: drop-shadow(6px 0 10px rgba(0, 0, 0, 0.3)); /* Optional: shadow for visual separation */
 }
 
 /* .home__img{
@@ -442,7 +443,7 @@ svg {
 .video-container {
   display: flex;
   justify-content: center; /* Centers the video horizontally */
-  margin-bottom: 2rem; /* Adds some space below the video */
+  margin-bottom: 5rem; /* Adds some space below the video */
 }
 
 .video-container video {
