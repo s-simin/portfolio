@@ -129,7 +129,8 @@ svg {
 }
 
 .section__title, 
-.section__subtitle {
+.section__subtitle,
+.skills__title {
   text-align: center;
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
@@ -433,6 +434,58 @@ svg {
 }
 
 /*=============== SKILLS ===============*/
+.about__skills {
+  margin-top: 2rem;
+}
+.skills__title {
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skills__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.5rem;
+}
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.skills__item {
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.skills__item:hover {
+  transform: translateY(-5px);
+}
+.skills__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+.skills__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+}
+.skills__description {
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+.skills__list {
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  text-align: left; /* Align text to the left */
+}
+
+.skills__list li {
+  margin-bottom: 0.05rem; /* Add some space between list items */
+  font-size: var(--normal-font-size); /* Maintain the same font size */
+}
 
 
 /*=============== PROJECTS ===============*/
@@ -443,12 +496,13 @@ svg {
 .video-container {
   display: flex;
   justify-content: center; /* Centers the video horizontally */
+  margin-top: 5rem; /* Adds some space below the video */
   margin-bottom: 5rem; /* Adds some space below the video */
 }
 
 .video-container video {
   max-width: 100%; /* Ensures the video is responsive */
-  height: auto; /* Maintains the aspect ratio */
+  max-height: 100%; /* Maintains the aspect ratio */
   border-radius: 0.5rem; /* Rounds the corners of the video box */
   box-shadow: 8px 0 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for visual separation */
 }
@@ -468,7 +522,7 @@ svg {
   position: relative;
   border-radius: 0.5rem;
   overflow: hidden;
-  padding: 1rem; /* Inner space within the card */
+  padding: 2rem; /* Inner space within the card */
   margin: .05rem; /* Space between cards */
   background-color: #fff; /* Optional: background color to distinguish the card */
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Optional: shadow for visual separation */
@@ -481,9 +535,10 @@ svg {
 }
 
 .projects__img{
-  width: 100%; /* Adjust this value to make the images smaller */
+  width: 70%; /* Adjust this value to make the images smaller */
   height: auto; /* Maintain the aspect ratio */
   margin: 0 auto; /* Center the image within the card */
+  margin-top: 1rem;
   display: block; /* Ensure the image is displayed as a block element */
   padding: 5px;
 }
@@ -515,7 +570,8 @@ svg {
 
 .projects__title{
   display: block;
-  font-size: var(--h2-font-size);
+  font-size: clamp(1.25rem, 2.5vw, 28px); /* Adjust the value as needed */
+  font-weight: var(--font-medium);
   margin-top: 2rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -556,13 +612,6 @@ svg {
 .projects__img-container:hover .projects__modal {
    visibility: visible;
 }
-
-
-/* Ensure proportional font sizes for project titles and buttons */
-.projects__title {
-  font-size: 2.5vw; /* Adjust the value as needed */
-}
-
 
 
 /*=============== CONTACT ===============*/
@@ -690,12 +739,9 @@ svg {
   .about__description {
     padding: 0rem 1rem 1rem;
   }
-  .skills__content{
-    grid-template-columns: max-content;
+  .skills__container{
+    grid-template-columns: 1fr; /* Single column layout */
     row-gap: 1rem;
-  }
-  .services__card{
-    padding-block: 1.5rem;
   }
   .projects__container{
     grid-template-columns: 1fr; /* Single column layout */
@@ -711,6 +757,10 @@ svg {
   }
   .about__description {
     padding: 0rem 1rem 1rem;
+  }
+  .skills__container{
+    grid-template-columns: 1fr; /* Single column layout */
+    row-gap: 1rem;
   }
   .projects__container{
     grid-template-columns: 1fr; /* Single column layout */
@@ -734,6 +784,10 @@ svg {
   }
   .about__description {
     padding: 0rem 1rem 1rem;
+  }
+  .skills__container {
+  display: grid;  
+  grid-template-columns: repeat(2, 1fr);  
   }
   .projects__container{
     grid-template-columns: 1fr; /* Single column layout */
@@ -817,6 +871,12 @@ svg {
   .blur-header::after{
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px); /* For Safari */
+  }
+  
+  .skills__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   }
 
   .projects__button{
