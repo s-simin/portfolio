@@ -130,6 +130,7 @@ svg {
 
 .section__title, 
 .section__subtitle,
+.differentiators__title,
 .skills__title {
   text-align: center;
   color: var(--title-color);
@@ -391,11 +392,6 @@ svg {
   filter: drop-shadow(6px 0 10px rgba(0, 0, 0, 0.3)); /* Optional: shadow for visual separation */
 }
 
-/* .home__img{
-  width: 600px;
-  transform: translateX(60px);
-} */
-
 
 /*=============== BUTTON ===============*/
 .button{
@@ -415,6 +411,7 @@ svg {
 /*=============== ABOUT ===============*/
 .about__container{
   display: flex;
+  margin-bottom: 3.5rem;
 }
 .about__data{
   row-gap: 2.5rem;
@@ -433,9 +430,64 @@ svg {
   stroke: var(--first-color);
 }
 
+/*=============== DIFFERENTIATORS ===============*/
+.about__differentiators {
+  margin-top: 5rem;
+}
+
+.differentiators__title {
+  color: var(--title-color);
+  text-align: center;
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.differentiators__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.differentiators__item {
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.differentiators__item:hover {
+  transform: translateY(-5px);
+}
+
+.differentiators__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+.differentiators__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-bottom: 1rem;
+}
+
+.differentiators__list {
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  text-align: left; /* Align text to the left */
+}
+
+.differentiators__list li {
+  margin-bottom: 0.8rem; /* Add some space between list items */
+  font-size: var(--normal-font-size); /* Maintain the same font size */
+  color: var(--text-color); /* Ensure the text color is consistent */
+}
+
 /*=============== SKILLS ===============*/
 .about__skills {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 .skills__title {
   color: var(--title-color);
@@ -445,7 +497,7 @@ svg {
 }
 .skills__container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 .skills__item {
@@ -503,6 +555,15 @@ svg {
     align-items: center; /* Centers the video and title horizontally */
     margin-top: 5rem; /* Adds some space above the video */
     margin-bottom: 5rem; /* Adds some space below the video */
+}
+
+/* Add offset to anchor links */
+video::before {
+    content: '';
+    display: block;
+    height: 100px; /* Adjust as needed */
+    margin-top: -100px; /* Adjust as needed */
+    visibility: hidden;
 }
 
 .video-container video {
@@ -757,6 +818,7 @@ svg {
   .about__description {
     padding: 0rem 1rem 1rem;
   }
+  .differentiators__container,
   .skills__container{
     grid-template-columns: 1fr; /* Single column layout */
     row-gap: 1rem;
@@ -776,6 +838,7 @@ svg {
   .about__description {
     padding: 0rem 1rem 1rem;
   }
+  .differentiators__container,
   .skills__container{
     grid-template-columns: 1fr; /* Single column layout */
     row-gap: 1rem;
@@ -803,9 +866,13 @@ svg {
   .about__description {
     padding: 0rem 1rem 1rem;
   }
+  .differentiators__container{
+    grid-template-columns: 1fr; /* Single column layout */
+    row-gap: 1rem;
+  }
   .skills__container {
   display: grid;  
-  grid-template-columns: repeat(2, 1fr);  
+  grid-template-columns: repeat(3, 1fr);  
   }
   .projects__container{
     grid-template-columns: 1fr; /* Single column layout */
@@ -847,6 +914,11 @@ svg {
   .about__data{
     text-align: justify;
     order: 1;
+  }
+
+  .differentiators__container{
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1rem;
   }
 
   .projects__container{
@@ -897,7 +969,7 @@ svg {
   
   .skills__container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   }
 
@@ -939,9 +1011,6 @@ svg {
   }
   .about__blob{
     width: 550px;
-  }
-  .about__description{
-    margin-bottom: 3rem;
   }
 
   .projects__container{
