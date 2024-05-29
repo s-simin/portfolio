@@ -83,7 +83,7 @@ window.addEventListener('scroll', scrollActive)
 const sr = ScrollReveal({
     origin: 'top',
     distance: '50px',
-    duration: 2000,
+    duration: 1000,
     delay: 400,
     // reset: true // Animations repeat
 })
@@ -92,4 +92,6 @@ sr.reveal(`.home__data, .home__social, .footer__container`)
 sr.reveal(`.home__image`, {origin: 'bottom'})
 sr.reveal(`.about__data`, {origin: 'top'})
 sr.reveal(`.about__image`, {origin: 'right'})
-sr.reveal(`.projects__card`, {interval: 100})
+sr.reveal(`.skills__container`, {interval: 90})
+sr.reveal(`.projects__card`, {interval: 90})
+sr.reveal(`.video-container`, {origin: 'left'})
